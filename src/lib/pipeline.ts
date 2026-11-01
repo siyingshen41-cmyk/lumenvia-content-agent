@@ -206,8 +206,8 @@ const VIOLATION_REWRITE: Record<string, Record<string, string>> = {
     insuperable: 'con rendimiento verificado',
   },
   'DE-UWG-5': {
-    umweltfreundlichste: 'mit Prüfbericht belegte', umweltfreundlich: 'mit Prüfbericht belegte',
-    klimaneutral: 'mit Nachweis auf Anfrage', nachhaltig: 'langlebig',
+    umweltfreundlichste: 'für den Außenbereich vorgesehene', umweltfreundlich: 'für den Außenbereich vorgesehene',
+    klimaneutral: 'für den Außenbereich geeignet', nachhaltig: 'für den Außenbereich geeignet',
   },
   'GLOBAL-MEDICAL': { cure: 'help with', treats: 'is designed for', heals: 'supports' },
 };
