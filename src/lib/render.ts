@@ -49,15 +49,15 @@ const COPY: Record<Locale, {
     ctaPrimary: 'Request a Quote', ctaSecondary: 'See Full Specs',
     trust: ['per full charge', 'motion detection range', 'dust-tight, water-jet protected', 'typical installation'],
     specsTitle: 'Every number that matters for outdoor installation',
-    specsLead: 'These figures come from the product technical manual and third-party test reports. Where a rating depends on installation height or angle, the test condition is stated.',
+    specsLead: 'Illustrative demo data: product specifications and any supporting test reports must be verified before commercial use.',
     labelModel: 'Model', labelIP: 'Ingress protection', labelBattery: 'Battery', labelRuntime: 'Backup runtime',
     labelRange: 'Detection range', labelLumen: 'Light output', labelTemp: 'Operating temperature',
     labelCert: 'Certification', labelIncluded: 'Included',
     complianceTitle: 'Compliance & certification',
     complianceItems: [
-      'CE marking — EU Declaration of Conformity and authorised representative details supplied with every unit.',
-      'FCC Part 15 — verified for North American markets; test report available on request.',
-      'Energy labelling — rated per EU 2023/1670 for lighting products; energy class and rated power printed on the label.',
+      'CE conformity status has not been verified for this demonstration product. Obtain applicable documentation before publishing a conformity claim.',
+      'FCC applicability and supporting evidence are not verified for this demonstration product.',
+      'EU light-source energy labelling (EU 2019/2015) depends on product classification. Annex IV excludes certain battery-operated products, including solar-powered garden lamps.',
       'No unsubstantiated superlatives — every performance claim is tied to a stated test condition or manufacturer measurement.',
     ],
     scenesTitle: "Built for the places you can't easily run a cable to",
@@ -77,7 +77,7 @@ const COPY: Record<Locale, {
     formSub: "Tell us your quantity and site type — we'll reply within one business day with pricing and lead time.",
     formCta: 'Request Quote',
     fields: { name: 'Name', email: 'Work email', site: 'Site type', qty: 'Quantity' },
-    footerNote: 'All product data sourced from technical manual and third-party test reports.',
+    footerNote: 'Illustrative demonstration product; verify specifications and evidence before commercial publication.',
     techTitle: 'Why these numbers hold up in winter',
     techLead: 'Most solar lights underdeliver after the third overcast week. Two components decide whether yours keeps working: the battery chemistry and the panel-to-battery balance.',
     techItems: [
@@ -122,14 +122,14 @@ const COPY: Record<Locale, {
     ctaPrimary: 'Angebot anfordern', ctaSecondary: 'Technische Daten',
     trust: ['pro Vollladung', 'Erfassungsreichweite', 'staubdicht, strahlwassergeschützt', 'Montagedauer'],
     specsTitle: 'Alle Kennzahlen, die für die Außenmontage zählen',
-    specsLead: 'Die folgenden Werte stammen aus dem technischen Handbuch und Prüfberichten unabhängiger Testlabore. Wo ein Wert von der Montagehöhe oder dem Winkel abhängt, ist die Messbedingung jeweils angegeben.',
+    specsLead: 'Demonstrationsdaten: Produktwerte und etwaige Prüfnachweise müssen vor einer Veröffentlichung unabhängig geprüft werden.',
     labelModel: 'Modell', labelIP: 'Schutzart', labelBattery: 'Akku', labelRuntime: 'Notlaufzeit',
     labelRange: 'Erfassungsreichweite', labelLumen: 'Lichtleistung', labelTemp: 'Betriebstemperatur',
     labelCert: 'Zertifizierung', labelIncluded: 'Lieferumfang',
     complianceTitle: 'Konformität und Zertifizierung',
     complianceItems: [
-      'CE-Kennzeichnung — EU-Konformitätserklärung und Angaben zum Bevollmächtigten liegen jedem Gerät bei.',
-      'Energiekennzeichnung — Kennzeichnung nach EU 2023/1670 für Beleuchtungsprodukte; Energieeffizienzklasse und Nennleistung stehen auf dem Label.',
+      'CE-Konformität und entsprechende Unterlagen sind für dieses Demonstrationsprodukt nicht verifiziert.',
+      'Energiekennzeichnung nach EU 2019/2015: Produktklassifikation und Ausnahmen, insbesondere für bestimmte batteriebetriebene Leuchten, zuerst prüfen.',
       'Keine unsubstantiierten Werbeaussagen — alle Leistungsangaben sind an eine genannte Messbedingung oder Herstellerangabe gebunden.',
       'Angaben zu Umwelteigenschaften nur mit Beleg — Aussagen zur Umweltwirkung werden ohne belastbare Grundlage nicht verwendet.',
     ],
@@ -150,7 +150,7 @@ const COPY: Record<Locale, {
     formSub: 'Nennen Sie uns Stückzahl und Einsatzort — wir antworten innerhalb eines Werktages mit Preis und Lieferzeit.',
     formCta: 'Angebot anfordern',
     fields: { name: 'Name', email: 'Geschäftliche E-Mail', site: 'Einsatzort', qty: 'Stückzahl' },
-    footerNote: 'Alle Produktdaten stammen aus technischem Handbuch und Prüfberichten unabhängiger Labore.',
+    footerNote: 'Demonstrationsdaten: Produktaussagen und Prüfnachweise sind vor einer Veröffentlichung zu verifizieren.',
     techTitle: 'Warum diese Werte auch im Winter tragen',
     techLead: 'Die meisten Solarlampen schwächeln nach der dritten trüben Woche. Zwei Bauteile entscheiden, ob Ihre weiterläuft: die Akkuchemie und das Verhältnis von Panel zu Akku.',
     techItems: [
@@ -201,8 +201,8 @@ const COPY: Record<Locale, {
     labelCert: 'Certificación', labelIncluded: 'Contenido',
     complianceTitle: 'Conformidad y certificación',
     complianceItems: [
-      'Marcado CE — cada unidad incluye la declaración de conformidad UE y los datos del representante autorizado.',
-      'Etiquetado energético — según el Reglamento UE 2023/1670; la clase energética y la potencia nominal figuran en la etiqueta.',
+      'La conformidad CE y los documentos justificativos de este producto de demostración no están verificados.',
+      'Etiquetado energético UE 2019/2015: se deben revisar la clasificación del producto y las exclusiones aplicables antes de formular una declaración.',
       'Sin superlativos no justificados — todas las afirmaciones de rendimiento están vinculadas a una condición de medición indicada.',
       'Declaraciones ambientales con respaldo — no se utilizan afirmaciones sobre impacto ambiental sin base verificable.',
     ],
@@ -341,7 +341,7 @@ export function renderPage(
    * 而不是在界面上假装打回一次。
    * 生产环境把 DEMO_INJECT_VIOLATION 设为 false 即可。
    */
-  const injectViolation = (process.env.DEMO_INJECT_VIOLATION ?? 'true') === 'true';
+  const injectViolation = (process.env.DEMO_INJECT_VIOLATION ?? 'false') === 'true';
   const VIOLATION: Record<Locale, string> = {
     en: '<p class="draft-warn">The best outdoor light on the market — 100% guaranteed to work.</p>',
     de: '<p class="draft-warn">Unsere umweltfreundlichste Außenleuchte – nachhaltig und klimaneutral.</p>',
