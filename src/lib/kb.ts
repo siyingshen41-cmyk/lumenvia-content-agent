@@ -30,11 +30,11 @@ export const KB_ENTRIES: KBEntry[] = [
   // ============ 规则区（7 条）============
   {
     id: 1, zone: 'rule', market: 'EU', category: CATEGORY,
-    title: 'EU 2023/1670 能效标签要求（照明类）',
-    content: '照明产品投放欧盟市场须贴能效标签，标注能效等级（A–G）与额定功率。页面与包装不得出现无依据的能效优越性宣称。',
-    source: '欧盟官方公报 Regulation (EU) 2023/1670',
-    sourceUrl: 'https://eur-lex.europa.eu/eli/reg/2023/1670/oj',
-    ruleId: 'EU-ENERGY-LABEL', effectiveAt: '2023-09-01', confidence: 5,
+    title: '欧盟光源能效标签适用性核查',
+    content: 'EU 2019/2015 针对适用光源的能效标签；其附录 IV 第 2(c) 项排除特定电池供电光源（包括太阳能花园灯）。必须按实际产品构造核实适用范围，不能默认本演示产品必须贴标。',
+    source: '欧盟委员会授权条例 (EU) 2019/2015',
+    sourceUrl: 'https://eur-lex.europa.eu/eli/reg/2019/2015',
+    ruleId: 'EU-ENERGY-APPLICABILITY', confidence: 5,
   },
   {
     id: 2, zone: 'rule', market: 'US', category: CATEGORY,
@@ -151,8 +151,8 @@ export const KB_ENTRIES: KBEntry[] = [
   {
     id: 18, zone: 'fact', market: 'EU', category: CATEGORY,
     title: '能效标签等级划分',
-    content: '照明类产品能效等级按 A–G 划分，A 为最高。标签须同时给出额定功率（W）与年能耗（kWh/1000h）。',
-    source: 'EU 2023/1670 · 附件 III', confidence: 5,
+    content: '对于适用 EU 2019/2015 的光源，能效标签采用 A–G 等级；电池供电产品（如太阳能花园灯）可能按附录 IV 排除，需先核实产品定义和供电结构。',
+    source: 'EU 2019/2015 · 附录 IV（适用性需核实）', confidence: 5,
   },
 ];
 
