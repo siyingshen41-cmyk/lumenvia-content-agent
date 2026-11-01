@@ -51,6 +51,8 @@ export function getProductFacts(locale: string, brand: BrandConfig): AdFact[] {
     { label: 'range_short', value: '12 m' },
     { label: 'install', value: '20 min' },
     { label: 'price', value: '79.00' },
+    // 演示产品不附带真实认证文件，不能默认已获 CE / FCC / RoHS 认证。
+    { label: 'cert', value: 'Certification not independently verified (demo)' },
   ];
 
   if (locale === 'de' || locale === 'es') {
@@ -60,13 +62,13 @@ export function getProductFacts(locale: string, brand: BrandConfig): AdFact[] {
       if (f.label === 'range') return { ...f, value: 'Bis 12 m bei 120°, gemessen bei 2 m Montagehöhe' };
       if (f.label === 'temp') return { ...f, value: '−20 °C bis 55 °C' };
       if (f.label === 'price') return { ...f, value: '74.00' };
+      if (f.label === 'cert') return { ...f, value: locale === 'de' ? 'Zertifizierung nicht verifiziert (Demo)' : 'Certificación no verificada (demo)' };
       return f;
     });
   }
 
   return [
     ...base,
-    { label: 'cert', value: 'CE (EU), FCC Part 15 (North America), RoHS compliant' },
     { label: 'included', value: 'Fixture, solar panel, 3 m cable, mounting bracket, drilling template, quick-start guide' },
     { label: 'shipping', value: 'Free shipping over $99 · 30-day returns' },
   ];
