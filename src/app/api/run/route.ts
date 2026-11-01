@@ -174,6 +174,17 @@ export async function POST(req: Request) {
         );
         await sleep(150);
 
+        // 关键质量门：仍然存在违规时，不得把该页面标记为成功产出。
+        if (r5.violations.length > 0) {
+          finishJob(job.id, { status: 'failed' });
+          send({
+            kind: 'error',
+            message: `质量校验仍有 ${r5.violations.length} 项未解决。已阻止将本次内容作为合格成品交付；请人工核查后重试。`,
+            violations: r5.violations,
+          });
+          return;
+        }
+
         /* ---------- S6 语义质检 ---------- */
         stage(6, 'running', fromExample ? '读取示例' : '评分中');
         const ruleIds = ((r1.detail as { rules?: Array<{ ruleId?: string }> })?.rules ?? [])
